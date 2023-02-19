@@ -1,0 +1,11 @@
+.profile__button {
+  grid-area: button;
+  background-color: transparent;
+  border: 1px solid transparent;
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.profile__button:hover {
+  opacity: 0.6;
+}

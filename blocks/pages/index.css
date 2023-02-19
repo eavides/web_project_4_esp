@@ -1,0 +1,12 @@
+@import url(../../font/InterWeb/inter.css);
+@import url(../root/root.css);
+@import url(../vendor/normalize.css);
+@import url(../header/header.css);
+@import url(../header/__logo/header__logo.css);
+@import url(../profile/profile.css);
+@import url(../profile/__button/profile__button.css);
+@import url(../profile/__name/profile__name.css);
+@import url(../profile/__position/profile__position.css);
+@import url(../profile/__image/profile__image.css);
+@import url(../profile/__information/profile__information.css);
+@import url(../profile/__edit/profile__edit.css);

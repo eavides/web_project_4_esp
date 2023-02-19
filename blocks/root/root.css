@@ -1,0 +1,15 @@
+.page {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "profile"
+    "grid"
+    "footer";
+  max-width: 1280px;
+  margin: 45px auto 0 auto;
+  font-family: "Inter";
+}
+
+body {
+  background-color: #000000;
+}
