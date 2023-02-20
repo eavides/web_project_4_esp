@@ -18,3 +18,7 @@
 @import url(../grid/__image/grid__image.css);
 @import url(../grid/__title/grid__title.css);
 @import url(../grid/__description/grid__descriptino.css);
+@import url(../grid/__like/grid__like.css);
+@import url(../footer/footer.css);
+@import url(../footer/__copyright/footer__copyright.css);
+@import url(../media/mobile.css);
