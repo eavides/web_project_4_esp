@@ -1,0 +1,9 @@
+.profile__add {
+  grid-area: add;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.profile__add:hover {
+  opacity: 0.6;
+}
