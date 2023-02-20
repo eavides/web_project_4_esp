@@ -2,10 +2,9 @@
   display: grid;
   grid-template-areas:
     "header"
-    "profile"
-    "grid"
+    "container"
     "footer";
-  max-width: 1280px;
+  max-width: 880px;
   margin: 45px auto 0 auto;
   font-family: "Inter";
 }
