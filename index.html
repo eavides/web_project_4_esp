@@ -14,7 +14,7 @@
     <div class="page">
       <header class="header">
         <img src="./images/Logo.png" alt="Page Logo" class="header__logo" />
-        <hr color="#545454" size="1px" />
+        <hr class="header__line" />
       </header>
       <main class="container">
         <section class="profile">
@@ -44,11 +44,7 @@
             </div>
           </div>
           <a href="#" class="profile__add">
-            <img
-              src="./images/Add Button.svg"
-              alt="Boton agregar"
-              class="profile__button-add"
-            />
+            <img src="./images/AddButton.svg" alt="Boton agregar" />
           </a>
         </section>
 
@@ -62,67 +58,169 @@
               />
               <div class="grid__description">
                 <p class="grid__title">Valle de Yosemite</p>
-                <img src="./images/heart.svg" alt="like" />
+                <input type="checkbox" id="grid__yosemite" class="grid__like" />
+                <label for="grid__yosemite" class="grid__label">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    ></path>
+                  </svg>
+                </label>
               </div>
             </div>
 
             <div class="grid__card">
               <img
                 src="./images/lago_louise.jpg"
-                alt="Bosque Yosemite"
+                alt="Lago Louise"
                 class="grid__image"
               />
               <div class="grid__description">
                 <p class="grid__title">Lago Louise</p>
-                <img src="./images/heart.svg" alt="like" />
+                <input type="checkbox" id="grid__louise" class="grid__like" />
+                <label for="grid__louise" class="grid__label">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    ></path>
+                  </svg>
+                </label>
               </div>
             </div>
 
             <div class="grid__card">
               <img
                 src="./images/montanas_calvas.jpg"
-                alt="Bosque Yosemite"
+                alt="Montañas Calvas"
                 class="grid__image"
               />
               <div class="grid__description">
                 <p class="grid__title">Montañas Calvas</p>
-                <img src="./images/heart.svg" alt="like" />
+                <input type="checkbox" id="grid__calvas" class="grid__like" />
+                <label for="grid__calvas" class="grid__label">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    ></path>
+                  </svg>
+                </label>
               </div>
             </div>
 
             <div class="grid__card">
               <img
                 src="./images/latemar.jpg"
-                alt="Bosque Yosemite"
+                alt="Latemar"
                 class="grid__image"
               />
               <div class="grid__description">
                 <p class="grid__title">Latemar</p>
-                <img src="./images/heart.svg" alt="like" />
+                <input type="checkbox" id="grid__latemar" class="grid__like" />
+                <label for="grid__latemar" class="grid__label">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    ></path>
+                  </svg>
+                </label>
               </div>
             </div>
 
             <div class="grid__card">
               <img
                 src="./images/vanoise.jpg"
-                alt="Bosque Yosemite"
+                alt="Vanoise National Park"
                 class="grid__image"
               />
               <div class="grid__description">
                 <p class="grid__title">Vanoise National Park</p>
-                <img src="./images/heart.svg" alt="like" class="grid__like" />
+                <input type="checkbox" id="grid__vanoise" class="grid__like" />
+                <label for="grid__vanoise" class="grid__label">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    ></path>
+                  </svg>
+                </label>
               </div>
             </div>
 
             <div class="grid__card">
               <img
                 src="./images/DiBraies.jpg"
-                alt="Bosque Yosemite"
+                alt="Lago di Braies"
                 class="grid__image"
               />
               <div class="grid__description">
                 <p class="grid__title">Lago di Braies</p>
-                <img src="./images/heart.svg" alt="like" />
+                <input type="checkbox" id="grid__braies" class="grid__like" />
+                <label for="grid__braies" class="grid__label">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                    ></path>
+                  </svg>
+                </label>
               </div>
             </div>
           </div>
@@ -132,5 +230,23 @@
         <h3 class="footer__copyright">© 2023 Alrededor de los EEUU</h3>
       </footer>
     </div>
+    <div class="popup">
+      <div class="popup__container">
+        <a href="#" class="popup__button">
+          <img src="./images/Close.png" alt="" />
+        </a>
+        <form class="popup__form" name="register">
+          <h1 class="popup__title">Edit Profile</h1>
+          <input type="text" name="name" class="popup__name popup__format" />
+          <input
+            type="text"
+            name="position"
+            class="popup__position popup__format"
+          />
+          <button type="submit" class="popup__save">Guardar</button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
 </html>

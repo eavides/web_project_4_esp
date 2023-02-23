@@ -60,4 +60,31 @@
   .footer__copyright {
     text-align: center;
   }
+
+  .popup__form {
+    width: 282px;
+    height: 322px;
+    margin-right: 0;
+  }
+
+  .popup {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+  }
+
+  .popup__container {
+    width: 282px;
+    height: 322px;
+  }
+  /* 
+  .popup__container {
+    top: 155px;
+    left: 6%;
+  }
+  .popup__button {
+    top: 0;
+    right: 30px;
+  } */
 }
