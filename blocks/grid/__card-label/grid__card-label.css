@@ -1,4 +1,4 @@
-.grid__label:hover {
+.grid__card-label:hover {
   cursor: pointer;
   opacity: 0.6;
 }

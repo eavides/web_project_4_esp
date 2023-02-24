@@ -1,14 +1,14 @@
-.grid__like {
+.grid__card-like {
   /* visibility: hidden; */
   display: none;
 }
 
-.grid__like:hover {
+.grid__card-like:hover {
   cursor: pointer;
   opacity: 0.6;
 }
 
-.grid__like:checked + .grid__label svg {
+.grid__card-like:checked + .grid__card-label svg {
   fill: #000000;
   stroke: #000000;
 }
