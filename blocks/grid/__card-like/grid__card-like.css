@@ -1,6 +1,12 @@
 .grid__card-like {
-  /* visibility: hidden; */
-  display: none;
+  /* visibility: hidden;
+  display: none; */
+  border: none;
+  background: url(../../../images/heart.svg) center no-repeat;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+  opacity: 0.5;
 }
 
 .grid__card-like:hover {
@@ -8,7 +14,7 @@
   opacity: 0.6;
 }
 
-.grid__card-like:checked + .grid__card-label svg {
-  fill: #000000;
-  stroke: #000000;
+.grid__card-like_active {
+  opacity: 1;
+  background: url(../../../images/heart_black.svg) center no-repeat;
 }

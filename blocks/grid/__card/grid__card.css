@@ -9,4 +9,5 @@
   object-fit: contain;
   overflow: hidden;
   background-color: #ffffff;
+  position: relative;
 }

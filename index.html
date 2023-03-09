@@ -54,7 +54,8 @@
 
         <section class="grid">
           <div class="grid__container">
-            <div class="grid__card">
+            <!--<div class="grid__card">
+              <button class="grid__card-delete"></button>
               <img
                 src="./images/Yosemite.jpg"
                 alt="Bosque Yosemite"
@@ -86,7 +87,7 @@
                 </label>
               </div>
             </div>
-
+            
             <div class="grid__card">
               <img
                 src="./images/lago_louise.jpg"
@@ -250,7 +251,7 @@
                   </svg>
                 </label>
               </div>
-            </div>
+            </div> -->
           </div>
         </section>
       </main>
@@ -258,6 +259,7 @@
         <h3 class="footer__copyright">© 2023 Alrededor de los EEUU</h3>
       </footer>
     </div>
+
     <div class="popup">
       <div class="popup__container">
         <a href="#" class="popup__button">
@@ -265,16 +267,74 @@
         </a>
         <form class="popup__form" name="register">
           <h1 class="popup__title">Edit Profile</h1>
-          <input type="text" name="name" class="popup__name popup__format" />
+          <input
+            type="text"
+            name="name"
+            class="popup__name popup__format"
+            placeholder="Nombre"
+          />
           <input
             type="text"
             name="position"
             class="popup__position popup__format"
+            placeholder="Profesion"
           />
           <button type="submit" class="popup__save">Guardar</button>
         </form>
       </div>
     </div>
+
+    <div class="newcard">
+      <div class="newcard__container">
+        <a href="#" class="newcard__button">
+          <img src="./images/Close.png" alt="" />
+        </a>
+        <form class="newcard__form" name="register">
+          <h1 class="newcard__title">Nuevo Lugar</h1>
+          <input
+            type="text"
+            name="nameplace"
+            class="newcard__name newcard__format"
+            placeholder="Titulo"
+          />
+          <input
+            type="text"
+            name="linkplace"
+            class="newcard__place newcard__format"
+            placeholder="Enlace de la Imagen"
+          />
+          <button type="submit" class="newcard__create">Crear</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="imgdisplay">
+      <div class="imgdisplay__container">
+        <div class="imgdisplay__container-card">
+          <a href="#" class="imgdisplay__container-button">
+            <img src="./images/Close.png" alt="" />
+          </a>
+          <img
+            src="./images/Yosemite.jpg"
+            alt="Foto seleccionada"
+            class="imgdisplay__image"
+          />
+          <h1 class="imgdisplay__title"></h1>
+        </div>
+      </div>
+    </div>
+
+    <template id="grid__template">
+      <div class="grid__card">
+        <button class="grid__card-delete"></button>
+        <img class="grid__card-image" src="" />
+        <div class="grid__card-description">
+          <p class="grid__card-title"></p>
+          <button class="grid__card-like"></button>
+        </div>
+      </div>
+    </template>
+
     <script src="script.js"></script>
   </body>
 </html>

@@ -24,6 +24,22 @@
     align-items: center;
   }
 
+  .grid__card {
+    width: 100%;
+
+    max-width: 282px;
+    height: 361px;
+  }
+
+  .grid__card-image {
+    width: 100%;
+    height: 100%;
+    max-width: 282px;
+    max-height: 282px;
+    margin: 0;
+    object-fit: cover;
+  }
+
   .grid__container {
     display: flex;
     flex-direction: column;
@@ -75,6 +91,16 @@
   }
 
   .popup__container {
+    width: 282px;
+    height: 322px;
+  }
+
+  .newcard__container {
+    width: 282px;
+    height: 322px;
+  }
+
+  .newcard__form {
     width: 282px;
     height: 322px;
   }
