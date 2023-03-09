@@ -3,10 +3,10 @@
     max-width: 100%;
   }
 
-  .grid__container {
+  /* .grid__container {
     display: grid;
     grid-template-columns: 1fr;
-  }
+  } */
 
   .profile {
     /* grid-template-areas:
