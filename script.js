@@ -71,6 +71,7 @@ function addPicture(picturteValue, titleValue) {
   cardElement
     .querySelector(".grid__card-like")
     .addEventListener("click", function (evt) {
+      evt.preventDefault();
       evt.target.classList.toggle("grid__card-like_active");
     });
   const deleteButton = cardElement.querySelector(".grid__card-delete");
@@ -79,9 +80,9 @@ function addPicture(picturteValue, titleValue) {
   });
 
   const openImage = cardElement.querySelector(".grid__card-image");
-  openImage.addEventListener("click", function (event) {
-    let imgLink = event.target.src;
-    let imgTitle = event.target
+  openImage.addEventListener("click", function (evt) {
+    let imgLink = evt.target.src;
+    let imgTitle = evt.target
       .closest(".grid__card")
       .querySelector(".grid__card-title").textContent;
     openDisplay(imgLink, imgTitle);
@@ -102,8 +103,8 @@ function closeCard() {
   newcard.classList.remove("newcard_opened");
 }
 
-function createNewCard(event) {
-  event.preventDefault();
+function createNewCard(evt) {
+  evt.preventDefault();
   const newCardAdd = addPicture(newLink.value, newTitle.value);
   gridContainer.prepend(newCardAdd);
   closeCard();
