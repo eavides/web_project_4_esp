@@ -56,7 +56,6 @@ function closePopup() {
 }
 
 function saveProfileInfo(evt) {
-  console.log(evt);
   evt.preventDefault();
   profileName.textContent = namePop.value;
   positionProf.textContent = positionPop.value;
@@ -103,7 +102,8 @@ function closeCard() {
   newcard.classList.remove("newcard_opened");
 }
 
-function createNewCard() {
+function createNewCard(event) {
+  event.preventDefault();
   const newCardAdd = addPicture(newLink.value, newTitle.value);
   gridContainer.prepend(newCardAdd);
   closeCard();
