@@ -57,21 +57,35 @@
         <a href="#" class="popup__button">
           <img src="./images/Close.png" alt="" />
         </a>
-        <form class="popup__form" name="register">
-          <h1 class="popup__title">Edit Profile</h1>
+        <form class="form" name="register" novalidate>
+          <!-- <fieldset class="form__set"> -->
+          <h1 class="form__title">Edit Profile</h1>
           <input
             type="text"
+            id="name-input"
             name="name"
-            class="popup__name popup__format"
+            class="form__input form__format"
             placeholder="Nombre"
+            minlength="2"
+            maxlength="40"
+            required
           />
+          <span class="name-input-error form__name-error"></span>
           <input
             type="text"
+            id="position-input"
             name="position"
-            class="popup__position popup__format"
+            class="form__input form__format"
             placeholder="Profesion"
+            minlength="2"
+            maxlength="200"
+            required
           />
-          <button type="submit" class="popup__save">Guardar</button>
+          <span class="position-input-error form__position-error"></span>
+          <button type="button" id="save-submit" class="form__submit">
+            Guardar
+          </button>
+          <!-- </fieldset> -->
         </form>
       </div>
     </div>
@@ -81,21 +95,31 @@
         <a href="#" class="newcard__button">
           <img src="./images/Close.png" alt="" />
         </a>
-        <form class="newcard__form" name="register">
-          <h1 class="newcard__title">Nuevo Lugar</h1>
+        <form class="form" name="register" novalidate>
+          <h1 class="form__title">Nuevo Lugar</h1>
           <input
             type="text"
+            id="title-input"
             name="nameplace"
-            class="newcard__name newcard__format"
+            class="form__input form__format"
             placeholder="Titulo"
+            minlength="2"
+            maxlength="30"
+            required
           />
+          <span class="title-input-error form__nameplace-error"></span>
           <input
-            type="text"
+            type="url"
+            id="url-input"
             name="linkplace"
-            class="newcard__place newcard__format"
+            class="form__input form__format"
             placeholder="Enlace de la Imagen"
+            required
           />
-          <button type="submit" class="newcard__create">Crear</button>
+          <span class="url-input-error form__linkplace-error"></span>
+          <button type="button" id="save-card" class="form__submit">
+            Crear
+          </button>
         </form>
       </div>
     </div>

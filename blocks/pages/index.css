@@ -24,6 +24,14 @@
 @import url(../grid/__card-delete/grid__card-delete.css);
 @import url(../footer/footer.css);
 @import url(../footer/__copyright/footer__copyright.css);
+@import url(../form/form.css);
+@import url(../form/__title/form__title.css);
+@import url(../form/__format/form_format.css);
+@import url(../form/__set/form__set.css);
+@import url(../form/__input-error/_active/form__input-error_active.css);
+@import url(../form/__input/_type_error/form__input_type_error.css);
+@import url(../form/__submit/form__submit.css);
+@import url(../form/__submit/_inactive/form__submit_inactive.css);
 @import url(../popup/popup.css);
 @import url(../popup/_opened/popup_opened.css);
 @import url(../popup/__container/popup__container.css);
