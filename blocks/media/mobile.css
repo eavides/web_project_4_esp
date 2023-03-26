@@ -77,7 +77,7 @@
     text-align: center;
   }
 
-  .popup__form {
+  .form {
     width: 282px;
     height: 322px;
     margin-right: 0;
@@ -100,8 +100,8 @@
     height: 322px;
   }
 
-  .newcard__form {
+  /* .newcard__form {
     width: 282px;
     height: 322px;
-  }
+  } */
 }
