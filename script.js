@@ -1,5 +1,6 @@
+import { Card } from "./Card.js";
 const openProfileButton = document.querySelector(".profile__button");
-const popup = document.querySelector(".popup");
+export const popup = document.querySelector(".popup");
 const popupCloseBtn = document.querySelector(".popup__button");
 const profileName = document.querySelector(".profile__name");
 const positionProf = document.querySelector(".profile__position");
@@ -10,13 +11,15 @@ const gridContainer = document.querySelector(".grid__container");
 
 const createCardButton = document.querySelector(".profile__add");
 const newcardCloseBtn = document.querySelector(".newcard__button");
-const newcard = document.querySelector(".newcard");
+export const newcard = document.querySelector(".newcard");
 const createCardBtn = document.querySelector("#save-card");
 let newTitle = document.querySelector("#title-input");
 let newLink = document.querySelector("#url-input");
 
-const imgDisplay = document.querySelector(".imgdisplay");
-const closeDisplayBtn = document.querySelector(".imgdisplay__container-button");
+export const imgDisplay = document.querySelector(".imgdisplay");
+export const closeDisplayBtn = document.querySelector(
+  ".imgdisplay__container-button"
+);
 
 const initialCards = [
   {
@@ -45,17 +48,25 @@ const initialCards = [
   },
 ];
 
+initialCards.forEach((item) => {
+  const card = new Card(item, "#grid__template");
+  const cardElement = card.generateCard();
+
+  // Agrega al DOM
+  document.querySelector(".grid__container").append(cardElement);
+});
+
 function openPopup() {
   popup.classList.add("popup_opened");
   namePop.value = profileName.textContent;
   positionPop.value = positionProf.textContent;
 }
 
-function closeAllPopup() {
+/*function closeAllPopup() {
   popup.classList.remove("popup_opened");
   newcard.classList.remove("newcard_opened");
   imgDisplay.classList.remove("imgdisplay_opened");
-}
+}*/
 
 function closeOut(evt) {
   if (
@@ -121,20 +132,19 @@ function createCard() {
 
 function createNewCard(evt) {
   evt.preventDefault();
-  console.log(newLink.value);
-  console.log(newTitle.value);
   const newCardAdd = createCardElement(newLink.value, newTitle.value);
   gridContainer.prepend(newCardAdd);
   closeAllPopup();
 }
 
+/*
 function openDisplay(link, title) {
   imgDisplay.classList.add("imgdisplay_opened");
   const imgPop = document.querySelector(".imgdisplay__image");
   const titlePop = document.querySelector(".imgdisplay__title");
   imgPop.src = link;
   titlePop.textContent = title;
-}
+}*/
 
 /*-------------------------------------------- */
 
@@ -224,9 +234,9 @@ newcard.addEventListener("click", closeOut);
 imgDisplay.addEventListener("click", closeOut);
 window.addEventListener("keydown", closeOut);
 openProfileButton.addEventListener("click", openPopup);
-popupCloseBtn.addEventListener("click", closeAllPopup);
+//popupCloseBtn.addEventListener("click", closeAllPopup);
 saveBtn.addEventListener("click", saveProfileInfo);
 createCardButton.addEventListener("click", createCard);
-newcardCloseBtn.addEventListener("click", closeAllPopup);
+//newcardCloseBtn.addEventListener("click", closeAllPopup);
 createCardBtn.addEventListener("click", createNewCard);
-closeDisplayBtn.addEventListener("click", closeAllPopup);
+//closeDisplayBtn.addEventListener("click", closeAllPopup);

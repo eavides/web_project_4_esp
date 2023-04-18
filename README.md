@@ -24,6 +24,7 @@ Para el projecto se a utilizado lo siguiente:
 4. Se utilizo los media query para el manejo de los diferentes puntos de quiebre.
 5. Se busco hacer la pagina responsive.
 6. Se a comenzado a utilizar Javascript para funciionalidad de la edicion del perfil
+7. Mejora del codigo aplicando POO
 
 **Puntos para completar el proyecto:**
 
