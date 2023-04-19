@@ -62,12 +62,6 @@ function openPopup() {
   positionPop.value = positionProf.textContent;
 }
 
-/*function closeAllPopup() {
-  popup.classList.remove("popup_opened");
-  newcard.classList.remove("newcard_opened");
-  imgDisplay.classList.remove("imgdisplay_opened");
-}*/
-
 function closeOut(evt) {
   if (
     evt.target.classList.value == "popup popup_opened" ||
@@ -136,17 +130,6 @@ function createNewCard(evt) {
   gridContainer.prepend(newCardAdd);
   closeAllPopup();
 }
-
-/*
-function openDisplay(link, title) {
-  imgDisplay.classList.add("imgdisplay_opened");
-  const imgPop = document.querySelector(".imgdisplay__image");
-  const titlePop = document.querySelector(".imgdisplay__title");
-  imgPop.src = link;
-  titlePop.textContent = title;
-}*/
-
-/*-------------------------------------------- */
 
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
