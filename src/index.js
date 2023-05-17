@@ -21,7 +21,7 @@ import closeSrc from "./images/Close.png";
 const logoHeader = document.querySelector(".header__logo");
 const profileHeader = document.querySelector(".profile__image");
 const editProfile = document.querySelector(".profile__edit");
-const addBtn = document.querySelector(".profile__add_image");
+const addBtn = document.querySelector(".profile__addImage");
 const closeBtn = document.querySelector(".popup__buttonClose");
 const closeNewCard = document.querySelector(".newcard__buttonClose");
 const closeImgDisplay = document.querySelector(
