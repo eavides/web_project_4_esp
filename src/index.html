@@ -8,38 +8,29 @@
       content="width=device-width,user-scalable=no ,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <title>Alrededor de los eeuu</title>
-    <link rel="stylesheet" href="./blocks/pages/index.css" />
   </head>
   <body>
     <div class="page">
       <header class="header">
-        <img src="./images/Logo.png" alt="Page Logo" class="header__logo" />
+        <img alt="Page Logo" class="header__logo" />
         <hr class="header__line" />
       </header>
       <main class="container">
         <section class="profile">
-          <img
-            src="./images/profile_image.jpg"
-            alt="Imagen de perfil"
-            class="profile__image"
-          />
+          <img alt="Imagen de perfil" class="profile__image" />
           <div class="profile__information">
-            <div>
+            <div id="infoGroup">
               <h1 class="profile__name">Jacques Cousteau</h1>
               <h2 class="profile__position">Explorador</h2>
             </div>
             <div>
               <a href="#" class="profile__button">
-                <img
-                  src="./images/Edit.svg"
-                  alt="Boton perfil"
-                  class="profile__edit"
-                />
+                <img alt="Boton perfil" class="profile__edit" />
               </a>
             </div>
           </div>
           <a href="#" class="profile__add">
-            <img src="./images/AddButton.svg" alt="Boton agregar" />
+            <img alt="Boton agregar" class="profile__add_image" />
           </a>
         </section>
 
@@ -55,10 +46,9 @@
     <div class="popup">
       <div class="popup__container">
         <a href="#" class="popup__button">
-          <img src="./images/Close.png" alt="" />
+          <img alt="cerrar" class="popup__buttonClose" />
         </a>
-        <form class="form" name="register" novalidate>
-          <!-- <fieldset class="form__set"> -->
+        <form class="form" name="register" id="editProfile" novalidate>
           <h1 class="form__title">Edit Profile</h1>
           <input
             type="text"
@@ -71,6 +61,7 @@
             required
           />
           <span class="name-input-error form__name-error"></span>
+
           <input
             type="text"
             id="position-input"
@@ -81,11 +72,11 @@
             maxlength="200"
             required
           />
+
           <span class="position-input-error form__position-error"></span>
-          <button type="button" id="save-submit" class="form__submit">
+          <button type="submit" id="save-submit" class="form__submit">
             Guardar
           </button>
-          <!-- </fieldset> -->
         </form>
       </div>
     </div>
@@ -93,9 +84,9 @@
     <div class="newcard">
       <div class="newcard__container">
         <a href="#" class="newcard__button">
-          <img src="./images/Close.png" alt="" />
+          <img alt="cerrar" class="newcard__buttonClose" />
         </a>
-        <form class="form" name="register" novalidate>
+        <form class="form" name="register" id="addCard" novalidate>
           <h1 class="form__title">Nuevo Lugar</h1>
           <input
             type="text"
@@ -117,7 +108,7 @@
             required
           />
           <span class="url-input-error form__linkplace-error"></span>
-          <button type="button" id="save-card" class="form__submit">
+          <button type="submit" id="save-card" class="form__submit">
             Crear
           </button>
         </form>
@@ -128,13 +119,9 @@
       <div class="imgdisplay__container">
         <div class="imgdisplay__container-card">
           <a href="#" class="imgdisplay__container-button">
-            <img src="./images/Close.png" alt="Icono de cierre" />
+            <img alt="cerrar" class="imgdisplay__container-buttonimg" />
           </a>
-          <img
-            src="./images/Yosemite.jpg"
-            alt="Foto seleccionada"
-            class="imgdisplay__image"
-          />
+          <img alt="Foto seleccionada" class="imgdisplay__image" />
           <h1 class="imgdisplay__title"></h1>
         </div>
       </div>
@@ -150,7 +137,5 @@
         </div>
       </div>
     </template>
-
-    <script type="module" src="index.js"></script>
   </body>
 </html>

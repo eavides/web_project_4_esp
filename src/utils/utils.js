@@ -6,16 +6,17 @@ import {
   profileName,
   positionPop,
   positionProf,
-} from "./index.js";
-export function openPopup() {
-  popup.classList.add("popup_opened");
-  namePop.value = profileName.textContent;
-  positionPop.value = positionProf.textContent;
-}
+} from "../index.js";
+
+// export function openPopup() {
+//   popup.classList.add("popup_opened");
+//   namePop.value = profileName.textContent;
+//   positionPop.value = positionProf.textContent;
+// }
 
 export function closeAllPopup() {
-  popup.classList.remove("popup_opened");
-  newcard.classList.remove("newcard_opened");
+  //popup.classList.remove("popup_opened");
+  //newcard.classList.remove("newcard_opened");
   imgDisplay.classList.remove("imgdisplay_opened");
 }
 
