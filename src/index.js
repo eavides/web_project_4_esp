@@ -38,6 +38,7 @@ export const popup = document.querySelector(".popup");
 const openProfileButton = document.querySelector(".profile__button");
 export const profileName = document.querySelector(".profile__name");
 export const positionProf = document.querySelector(".profile__position");
+const avatarProf = document.querySelector(".profile__image");
 export const namePop = document.querySelector("#name-input");
 export const positionPop = document.querySelector("#position-input");
 const createCardButton = document.querySelector(".profile__add");
@@ -57,6 +58,9 @@ function createCard(cardInfo) {
   });
   return card.generateCard();
 }
+
+// const apiCard = new Api();
+// const userInfo = await api.getCards();
 
 //crea nueva seccion y agrega tarjetas
 const defaultCardList = new Section(
@@ -83,9 +87,12 @@ const formElement = Array.from(
 );
 const formCard = new FormValidator(settings, formElement[1]);
 const formProfile = new FormValidator(settings, formElement[0]);
+
 const profilePopup = new PopupWithForm(".popup", (data) => {
+  console.log(data);
   profileInfo.setUserInfo(data);
 });
+
 profilePopup.setEventListeners();
 const newCardPopup = new PopupWithForm(".newcard", (data) => {
   createNewCard(data);
@@ -95,11 +102,21 @@ formCard.enableValidation();
 formProfile.enableValidation();
 const profileInfo = new UserInfo(profile);
 
+async function profileinit(prof) {
+  const userInfo = await prof.getUserInfo();
+  //console.log(userInfo);
+  profileName.textContent = userInfo.name;
+  positionProf.textContent = userInfo.about;
+  avatarProf.src = userInfo.avatar;
+}
+profileinit(profileInfo);
+
 //abre ventana de perfil
-openProfileButton.addEventListener("click", (evt) => {
+openProfileButton.addEventListener("click", async (evt) => {
   evt.preventDefault;
 
-  const dataInfo = profileInfo.getUserInfo();
+  const dataInfo = await profileInfo.getUserInfo();
+  //console.log(dataInfo);
   profilePopup.open(dataInfo);
 });
 

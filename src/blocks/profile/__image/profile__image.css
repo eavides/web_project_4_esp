@@ -1,6 +1,7 @@
 .profile__image {
   grid-area: image;
   border-radius: 50%;
-  max-width: 168.75px;
-  max-height: 127.5px;
+  width: 127.5px;
+  height: 127.5px;
+  object-fit: cover;
 }

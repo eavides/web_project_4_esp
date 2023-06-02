@@ -11,7 +11,7 @@ export default class Popup {
       const infoName = infoForm.querySelector("#name-input");
       const infoPosition = infoForm.querySelector("#position-input");
       infoName.value = data.name;
-      infoPosition.value = data.position;
+      infoPosition.value = data.about;
     }
   }
 
