@@ -4,8 +4,10 @@ export default class Popup {
     this._popupElement = document.querySelector(this._selectorPopup);
   }
   open(data) {
+    //console.log(data);
     this._popupElement.classList.add("popup_opened");
     this._popupElement.classList.add("newcard_opened");
+    this._popupElement.classList.add("confirmation_opened");
     const infoForm = this._popupElement.querySelector("#editProfile");
     if (infoForm) {
       const infoName = infoForm.querySelector("#name-input");
@@ -18,14 +20,19 @@ export default class Popup {
   close() {
     this._popupElement.classList.remove("popup_opened");
     this._popupElement.classList.remove("newcard_opened");
+    this._popupElement.classList.remove("confirmation_opened");
   }
 
   _handleEscClose(evt) {
     //console.log(evt);
     if (
-      evt.target.classList.value == "popup popup_opened newcard_opened" ||
-      evt.target.classList.value == "newcard popup_opened newcard_opened" ||
-      evt.target.classList.value == "imgdisplay__container"
+      evt.target.classList.value ==
+        "popup popup_opened newcard_opened confirmation_opened" ||
+      evt.target.classList.value ==
+        "newcard popup_opened newcard_opened confirmation_opened" ||
+      evt.target.classList.value == "imgdisplay__container" ||
+      evt.target.classList.value ==
+        "confirmation popup_opened newcard_opened confirmation_opened"
     ) {
       this.close();
     }

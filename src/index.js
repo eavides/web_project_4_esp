@@ -4,6 +4,7 @@ import Section from "./components/Section.js";
 import PopupWithImage from "./components/PopupWithImage.js";
 import PopupWithForm from "./components/PopupWithForm.js";
 import UserInfo from "./components/UserInfo.js";
+import Api from "./components/Api.js";
 import { FormValidator } from "./components/FormValidator.js";
 import { closeAllPopup } from "./utils/utils.js";
 import {
@@ -24,6 +25,7 @@ const editProfile = document.querySelector(".profile__edit");
 const addBtn = document.querySelector(".profile__addImage");
 const closeBtn = document.querySelector(".popup__buttonClose");
 const closeNewCard = document.querySelector(".newcard__buttonClose");
+const closeConfirm = document.querySelector(".confirmation__buttonClose");
 const closeImgDisplay = document.querySelector(
   ".imgdisplay__container-buttonimg"
 );
@@ -34,6 +36,7 @@ addBtn.src = addSrc;
 closeBtn.src = closeSrc;
 closeNewCard.src = closeSrc;
 closeImgDisplay.src = closeSrc;
+closeConfirm.src = closeSrc;
 export const popup = document.querySelector(".popup");
 const openProfileButton = document.querySelector(".profile__button");
 export const profileName = document.querySelector(".profile__name");
@@ -52,9 +55,23 @@ export const closeDisplayBtn = document.querySelector(
 
 function createCard(cardInfo) {
   const card = new Card(cardInfo, "#grid__template", (evt) => {
-    const imgPopup = new PopupWithImage(".imgdisplay");
-    imgPopup.open(evt);
-    imgPopup.setEventListeners(closeDisplayBtn);
+    if (evt.target.classList.value === "grid__card-image") {
+      const imgPopup = new PopupWithImage(".imgdisplay");
+      imgPopup.open(evt);
+      imgPopup.setEventListeners(closeDisplayBtn);
+    }
+
+    if (evt.target.classList.value === "grid__card-delete") {
+      //console.log(cardInfo._id);
+      const delCard = new PopupWithForm(".confirmation", () => {
+        let body;
+        const apiCard = new Api();
+        //console.log(cardInfo._id);
+        apiCard.deleteCard(body, cardInfo._id);
+      });
+      delCard.open(evt);
+      delCard.setEventListeners();
+    }
   });
   return card.generateCard();
 }
@@ -67,12 +84,15 @@ const defaultCardList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
+      //console.log(item);
       const cardElement = createCard(item);
+      //console.log(cardElement);
       defaultCardList.addItem(cardElement);
     },
   },
   cardListSelector
 );
+//console.log(defaultCardList);
 defaultCardList.renderItems();
 
 //crea nueva tarjeta
@@ -82,6 +102,7 @@ function createNewCard(data) {
   document.querySelector(".grid__container").prepend(cardElement);
   closeAllPopup();
 }
+
 const formElement = Array.from(
   document.querySelectorAll(settings.formSelector)
 );
@@ -89,15 +110,17 @@ const formCard = new FormValidator(settings, formElement[1]);
 const formProfile = new FormValidator(settings, formElement[0]);
 
 const profilePopup = new PopupWithForm(".popup", (data) => {
-  console.log(data);
+  //console.log(data);
   profileInfo.setUserInfo(data);
 });
-
 profilePopup.setEventListeners();
+
 const newCardPopup = new PopupWithForm(".newcard", (data) => {
   createNewCard(data);
 });
+
 newCardPopup.setEventListeners();
+
 formCard.enableValidation();
 formProfile.enableValidation();
 const profileInfo = new UserInfo(profile);

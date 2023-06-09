@@ -14,6 +14,7 @@ export default class Section {
     this.cardInfo = await this._apiCard.getCards();
     //console.log(this.cardInfo);
     //this._renderedItems.
+    //console.log(this.cardInfo);
     this.cardInfo.forEach((item) => {
       this._renderer(item);
     });

@@ -20,8 +20,8 @@
           <img alt="Imagen de perfil" class="profile__image" />
           <div class="profile__information">
             <div id="infoGroup">
-              <h1 class="profile__name">Jacques Cousteau</h1>
-              <h2 class="profile__position">Explorador</h2>
+              <h1 class="profile__name"></h1>
+              <h2 class="profile__position"></h2>
             </div>
             <div>
               <a href="#" class="profile__button">
@@ -115,6 +115,23 @@
       </div>
     </div>
 
+    <div class="confirmation">
+      <div class="confirmation__container">
+        <a href="#" class="confirmation__button">
+          <img alt="cerrar" class="confirmation__buttonClose" />
+        </a>
+        <form
+          class="form form__confirmation"
+          name="confirm"
+          id="delCard"
+          novalidate
+        >
+          <h1 class="form__title">¿Estás Seguro?</h1>
+          <button type="submit" id="delete" class="form__submit">Sí</button>
+        </form>
+      </div>
+    </div>
+
     <div class="imgdisplay">
       <div class="imgdisplay__container">
         <div class="imgdisplay__container-card">
@@ -133,7 +150,10 @@
         <img class="grid__card-image" src="./images/Yosemite.jpg" />
         <div class="grid__card-description">
           <p class="grid__card-title"></p>
-          <button class="grid__card-like"></button>
+          <div class="grid__card-group">
+            <button class="grid__card-like"></button>
+            <p class="grid__card-count"></p>
+          </div>
         </div>
       </div>
     </template>
