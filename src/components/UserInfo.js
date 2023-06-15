@@ -15,6 +15,7 @@ export default class UserInfo {
     this.infoProfile.name = userInfo.name;
     this.infoProfile.about = userInfo.about;
     this.infoProfile.avatar = userInfo.avatar;
+    this.infoProfile.userId = userInfo._id;
     return this.infoProfile;
   }
   async setUserInfo(data) {
@@ -22,6 +23,6 @@ export default class UserInfo {
     this.position.textContent = data.about;
 
     const editInfo = await this._api.editProfileInfo(data);
-    console.log(editInfo);
+    //console.log(editInfo);
   }
 }

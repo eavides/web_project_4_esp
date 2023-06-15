@@ -52,27 +52,69 @@ export const imgDisplay = document.querySelector(".imgdisplay");
 export const closeDisplayBtn = document.querySelector(
   ".imgdisplay__container-button"
 );
+let idprofile;
+
+const profileInfo = new UserInfo(profile);
+
+async function profileinit(prof) {
+  const userInfo = await prof.getUserInfo();
+  //console.log(userInfo);
+  profileName.textContent = userInfo.name;
+  positionProf.textContent = userInfo.about;
+  avatarProf.src = userInfo.avatar;
+  //console.log(userInfo.userId);
+  idprofile = userInfo.userId;
+}
+//profileinit(profileInfo);
+
+//console.log(idprofile);
 
 function createCard(cardInfo) {
-  const card = new Card(cardInfo, "#grid__template", (evt) => {
-    if (evt.target.classList.value === "grid__card-image") {
-      const imgPopup = new PopupWithImage(".imgdisplay");
-      imgPopup.open(evt);
-      imgPopup.setEventListeners(closeDisplayBtn);
-    }
+  //console.log(cardInfo);
+  const card = new Card(
+    cardInfo,
+    "#grid__template",
+    (evt, elemento) => {
+      if (evt.target.classList.value === "grid__card-image") {
+        const imgPopup = new PopupWithImage(".imgdisplay");
+        imgPopup.open(evt);
+        imgPopup.setEventListeners(closeDisplayBtn);
+      }
 
-    if (evt.target.classList.value === "grid__card-delete") {
-      //console.log(cardInfo._id);
-      const delCard = new PopupWithForm(".confirmation", () => {
-        let body;
-        const apiCard = new Api();
-        //console.log(cardInfo._id);
-        apiCard.deleteCard(body, cardInfo._id);
-      });
-      delCard.open(evt);
-      delCard.setEventListeners();
+      if (evt.target.classList.value === "grid__card-delete") {
+        //console.log("este");
+        //console.log(elemento);
+        const delCard = new PopupWithForm(".confirmation", () => {
+          let body;
+          const apiCard = new Api();
+          //console.log(cardInfo._id);
+          apiCard.deleteCard(body, cardInfo._id);
+          elemento.remove();
+        });
+        delCard.open(evt);
+        delCard.setEventListeners();
+      }
+    },
+    idprofile,
+    async (evt) => {
+      let body;
+      console.log(cardInfo._id);
+      const apiLike = new Api();
+      const respLike = await apiLike.likeCard(body, cardInfo._id);
+      evt.target.nextElementSibling.textContent = respLike.likes.length;
+      // console.log(evt.target.classList.toggle("grid__card-count"));
+      // console.log(evt.target.nextElementSibling.textContent);
+      // return respLike.likes.length;
+    },
+    async (evt) => {
+      let body;
+      //console.log("nolike");
+      const apiUnlike = new Api();
+      const respUnlike = await apiUnlike.unlikeCard(body, cardInfo._id);
+      evt.target.nextElementSibling.textContent = respUnlike.likes.length;
+      //console.log(respUnlike);
     }
-  });
+  );
   return card.generateCard();
 }
 
@@ -97,7 +139,8 @@ defaultCardList.renderItems();
 
 //crea nueva tarjeta
 function createNewCard(data) {
-  const newCardObj = { name: data.nameplace, link: data.linkplace };
+  //console.log(data);
+  const newCardObj = { name: data.name, link: data.link };
   const cardElement = createCard(newCardObj);
   document.querySelector(".grid__container").prepend(cardElement);
   closeAllPopup();
@@ -123,15 +166,17 @@ newCardPopup.setEventListeners();
 
 formCard.enableValidation();
 formProfile.enableValidation();
-const profileInfo = new UserInfo(profile);
+//const profileInfo = new UserInfo(profile);
 
-async function profileinit(prof) {
-  const userInfo = await prof.getUserInfo();
-  //console.log(userInfo);
-  profileName.textContent = userInfo.name;
-  positionProf.textContent = userInfo.about;
-  avatarProf.src = userInfo.avatar;
-}
+// async function profileinit(prof) {
+//   const userInfo = await prof.getUserInfo();
+//   //console.log(userInfo);
+//   profileName.textContent = userInfo.name;
+//   positionProf.textContent = userInfo.about;
+//   avatarProf.src = userInfo.avatar;
+//   //console.log(userInfo.userId);
+//   idprofile = userInfo.userId;
+// }
 profileinit(profileInfo);
 
 //abre ventana de perfil

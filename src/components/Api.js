@@ -5,7 +5,8 @@ export default class Api {
   }
 
   async fetcher(url, method, body) {
-    console.log("fetched");
+    // console.log("fetched");
+    // console.log(method);
 
     const data = await fetch(url, {
       headers: {
@@ -15,7 +16,7 @@ export default class Api {
       method,
       body: JSON.stringify(body),
     });
-    console.log(data);
+    //console.log(data);
 
     if (data.ok) {
       return data.json();
@@ -76,6 +77,35 @@ export default class Api {
     } catch (err) {}
 
     return delCard;
+  }
+
+  async likeCard(body, id) {
+    let likeCard;
+    try {
+      likeCard = await this.fetcher(
+        `${this._urlBase}/cards/likes/${id}`,
+        "PUT",
+        body
+      );
+      //console.log(id);
+    } catch (err) {
+      console.log(err);
+    }
+    return likeCard;
+  }
+
+  async unlikeCard(body, id) {
+    let unlikeCard;
+    try {
+      unlikeCard = await this.fetcher(
+        `${this._urlBase}/cards/likes/${id}`,
+        "DELETE",
+        body
+      );
+    } catch (err) {
+      console.log(err);
+    }
+    return unlikeCard;
   }
 }
 
