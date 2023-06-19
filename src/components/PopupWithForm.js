@@ -28,25 +28,19 @@ export default class PopupWithForm extends Popup {
   setEventListeners() {
     super.setEventListeners();
     this.popupFormElement.addEventListener("submit", (evt) => {
-      //console.log(evt.target.id);
-
+      evt.target.querySelector(".form__submit").textContent = "Guardando...";
       evt.preventDefault();
       const formData = this._getInputValues();
-      this.handleFormSubmit(formData);
-      //console.log(evt.target.id);
-      //console.log(formData);
-      if (evt.target.id != "delCard" && evt.target.id != "editProfile") {
-        this._apiCard.addCard(formData);
-        // const respu = apiCard
-        //   .then((res) => {
-        //     return res.json;
-        //   })
-        //   .then((data) => {
-        //     console.log(data);
-        //   });
-        // console.log(respu);
+      if (
+        evt.target.id != "delCard" &&
+        evt.target.id != "editProfile" &&
+        evt.target.id != "editImage"
+      ) {
+        const addedCard = this._apiCard.addCard(formData);
+        this.handleFormSubmit(addedCard);
+      } else {
+        this.handleFormSubmit(formData);
       }
-
       this.close();
     });
   }

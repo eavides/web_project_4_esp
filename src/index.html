@@ -17,7 +17,11 @@
       </header>
       <main class="container">
         <section class="profile">
-          <img alt="Imagen de perfil" class="profile__image" />
+          <div class="profile__content">
+            <img alt="Imagen de perfil" class="profile__image" />
+            <img alt="Icono editar" class="profile__image_edit" />
+          </div>
+
           <div class="profile__information">
             <div id="infoGroup">
               <h1 class="profile__name"></h1>
@@ -128,6 +132,29 @@
         >
           <h1 class="form__title">¿Estás Seguro?</h1>
           <button type="submit" id="delete" class="form__submit">Sí</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="editimage">
+      <div class="editimage__container">
+        <a href="#" class="editimage__button">
+          <img alt="cerrar" class="editimage__buttonClose" />
+        </a>
+        <form class="form" name="register" id="editImage" novalidate>
+          <h1 class="form__title">Cambiar foto de perfil</h1>
+          <input
+            type="url"
+            id="url-input"
+            name="link"
+            class="form__input form__format"
+            placeholder="Enlace de la Imagen"
+            required
+          />
+          <span class="url-input-error form__linkplace-error"></span>
+          <button type="submit" id="save-card" class="form__submit">
+            Guardar
+          </button>
         </form>
       </div>
     </div>

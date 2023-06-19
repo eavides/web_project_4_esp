@@ -62,5 +62,9 @@
 @import url(../confirmation/_opened/confirmation_opened.css);
 @import url(../confirmation/__button/confirmation__button.css);
 @import url(../confirmation/__buttonClose/confirmation__buttonClose.css);
+@import url(../editimage/editimage.css);
+@import url(../editimage/_opened/editimage_opened.css);
+@import url(../editimage/__container/editimage__container.css);
+@import url(../editimage/__button/editimage__button.css);
 @import url(../media/mobile.css);
 @import url(../media/tablet.css);

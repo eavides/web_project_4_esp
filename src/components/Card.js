@@ -17,7 +17,6 @@ class Card {
     this._handleCardClick = handleCardClick;
     this._handleLike = handleLike;
     this._handleUnlike = handleUnlike;
-    //this._userId = data.owner._id;
   }
   _getTemplate() {
     this._cardElement = document
@@ -36,17 +35,14 @@ class Card {
     this.btnCardLike.addEventListener("click", (evt) => {
       evt.preventDefault();
       if (evt.target.classList.toggle("grid__card-like_active")) {
-        //console.log("like");
         this._handleLike(evt);
       } else {
-        // console.log("no like");
         this._handleUnlike(evt);
       }
     });
 
     this.btnCardDel.addEventListener("click", (evt) => {
       this._handleCardClick(evt, this._element);
-      //this._element.remove();
     });
   }
   setCardProperties() {
@@ -63,10 +59,10 @@ class Card {
     if (this._dataCard.owner) {
       this._userId = this._dataCard.owner._id;
     }
-    //console.log(this._dataCard._id);
+
     if (this._dataCard._id) {
       this._dataCard.likes.map((item) => {
-        if (item._id == this._dataCard.owner._id) {
+        if (item._id == this._user) {
           this.btnCardLike.classList.add("grid__card-like_active");
         }
       });

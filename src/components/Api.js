@@ -5,9 +5,6 @@ export default class Api {
   }
 
   async fetcher(url, method, body) {
-    // console.log("fetched");
-    // console.log(method);
-
     const data = await fetch(url, {
       headers: {
         authorization: this._authorization,
@@ -30,7 +27,6 @@ export default class Api {
     } catch (err) {
       console.log(`se dio el sigueinte error: ${err}`);
     }
-    //console.log(userInfo);
     return userInfo;
   }
 
@@ -38,8 +34,9 @@ export default class Api {
     let cardsInfo;
     try {
       cardsInfo = await this.fetcher(`${this._urlBase}/cards`, "GET");
-    } catch (err) {}
-    //console.log(cardsInfo);
+    } catch (err) {
+      console.log(err);
+    }
     return cardsInfo;
   }
 
@@ -51,7 +48,9 @@ export default class Api {
         "PATCH",
         data
       );
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
 
     return profileInfo;
   }
@@ -60,13 +59,13 @@ export default class Api {
     let newCard;
     try {
       newCard = await this.fetcher(`${this._urlBase}/cards`, "POST", data);
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
     return newCard;
   }
 
   async deleteCard(data, id) {
-    //console.log("entro api");
-    //console.log(id);
     let delCard;
     try {
       delCard = await this.fetcher(
@@ -74,7 +73,9 @@ export default class Api {
         "DELETE",
         data
       );
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
 
     return delCard;
   }
@@ -87,7 +88,6 @@ export default class Api {
         "PUT",
         body
       );
-      //console.log(id);
     } catch (err) {
       console.log(err);
     }
@@ -107,13 +107,18 @@ export default class Api {
     }
     return unlikeCard;
   }
-}
 
-// const api = new Api();
-// (async () => {
-//   const userInfo = await api.editProfileInfo({
-//     name: "Jacques Cousteaufff",
-//     about: "Sailor, researcher",
-//   });
-//   console.log(userInfo);
-// })();
+  async updateImg(data, link) {
+    let newImage;
+    try {
+      newImage = await this.fetcher(
+        `${this._urlBase}/users/me/avatar`,
+        "PATCH",
+        data
+      );
+    } catch (err) {
+      console.log(err);
+    }
+    return newImage;
+  }
+}

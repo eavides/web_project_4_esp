@@ -6,10 +6,8 @@ export default class UserInfo {
   }
 
   async getUserInfo() {
-    //console.log(this.infoElement);
     this.infoProfile = {};
     const userInfo = await this._api.getUserInfo();
-    //console.log(userInfo);
     this.name = document.querySelector(this.infoElement.name);
     this.position = document.querySelector(this.infoElement.position);
     this.infoProfile.name = userInfo.name;
@@ -23,6 +21,5 @@ export default class UserInfo {
     this.position.textContent = data.about;
 
     const editInfo = await this._api.editProfileInfo(data);
-    //console.log(editInfo);
   }
 }
