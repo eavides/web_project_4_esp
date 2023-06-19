@@ -15,7 +15,7 @@
   cursor: pointer;
 } */
 
-.profile__image_edit {
+.profile__imageEdit {
   position: absolute;
   left: 50px;
   top: 50px;
@@ -32,7 +32,7 @@
   cursor: pointer;
 }
 
-.profile__content:hover .profile__image_edit {
+.profile__content:hover .profile__imageEdit {
   z-index: 1;
   cursor: pointer;
 }

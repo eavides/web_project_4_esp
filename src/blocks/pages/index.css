@@ -33,7 +33,7 @@
 @import url(../form/__input/_type_error/form__input_type_error.css);
 @import url(../form/__submit/form__submit.css);
 @import url(../form/__submit/_inactive/form__submit_inactive.css);
-@import url(../form/__confirmation/form__confirmation.css);
+@import url(../form/_confirmation/form_confirmation.css);
 @import url(../popup/popup.css);
 @import url(../popup/_opened/popup_opened.css);
 @import url(../popup/__container/popup__container.css);
