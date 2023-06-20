@@ -21,69 +21,61 @@ export default class Api {
   }
 
   async getUserInfo() {
-    let userInfo;
+    //let userInfo;
     try {
-      userInfo = await this.fetcher(`${this._urlBase}/users/me`, "GET");
+      return await this.fetcher(`${this._urlBase}/users/me`, "GET");
     } catch (err) {
       console.log(`se dio el sigueinte error: ${err}`);
     }
-    return userInfo;
+    //return userInfo;
   }
 
   async getCards() {
-    let cardsInfo;
+    //let cardsInfo;
     try {
-      cardsInfo = await this.fetcher(`${this._urlBase}/cards`, "GET");
+      return await this.fetcher(`${this._urlBase}/cards`, "GET");
     } catch (err) {
       console.log(err);
     }
-    return cardsInfo;
+    //return cardsInfo;
   }
 
   async editProfileInfo(data) {
-    let profileInfo;
+    //let profileInfo;
     try {
-      profileInfo = await this.fetcher(
-        `${this._urlBase}/users/me`,
-        "PATCH",
-        data
-      );
+      return await this.fetcher(`${this._urlBase}/users/me`, "PATCH", data);
     } catch (err) {
       console.log(err);
     }
 
-    return profileInfo;
+    //return profileInfo;
   }
 
   async addCard(data) {
-    let newCard;
+    //let newCard;
     try {
-      newCard = await this.fetcher(`${this._urlBase}/cards`, "POST", data);
+      return await this.fetcher(`${this._urlBase}/cards`, "POST", data);
     } catch (err) {
       console.log(err);
     }
-    return newCard;
+    //return newCard;
   }
 
   async deleteCard(data, id) {
-    let delCard;
+    //let delCard;
     try {
-      delCard = await this.fetcher(
-        `${this._urlBase}/cards/${id}`,
-        "DELETE",
-        data
-      );
+      return await this.fetcher(`${this._urlBase}/cards/${id}`, "DELETE", data);
     } catch (err) {
       console.log(err);
     }
 
-    return delCard;
+    //return delCard;
   }
 
   async likeCard(body, id) {
-    let likeCard;
+    //let likeCard;
     try {
-      likeCard = await this.fetcher(
+      return await this.fetcher(
         `${this._urlBase}/cards/likes/${id}`,
         "PUT",
         body
@@ -91,13 +83,13 @@ export default class Api {
     } catch (err) {
       console.log(err);
     }
-    return likeCard;
+    //return likeCard;
   }
 
   async unlikeCard(body, id) {
-    let unlikeCard;
+    //let unlikeCard;
     try {
-      unlikeCard = await this.fetcher(
+      return await this.fetcher(
         `${this._urlBase}/cards/likes/${id}`,
         "DELETE",
         body
@@ -105,13 +97,13 @@ export default class Api {
     } catch (err) {
       console.log(err);
     }
-    return unlikeCard;
+    //return unlikeCard;
   }
 
   async updateImg(data, link) {
-    let newImage;
+    //let newImage;
     try {
-      newImage = await this.fetcher(
+      return await this.fetcher(
         `${this._urlBase}/users/me/avatar`,
         "PATCH",
         data
@@ -119,6 +111,6 @@ export default class Api {
     } catch (err) {
       console.log(err);
     }
-    return newImage;
+    //return newImage;
   }
 }

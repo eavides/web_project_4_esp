@@ -1,7 +1,8 @@
 import Api from "./Api.js";
+import { api } from "../index.js";
 export default class Section {
   constructor({ items, renderer }, containerSelector) {
-    this._apiCard = new Api();
+    this._apiCard = api; //new Api();
     this._renderedItems = items;
     this._renderer = renderer;
     this._container = document.querySelector(containerSelector);

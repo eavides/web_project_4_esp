@@ -1,12 +1,12 @@
 import Popup from "./Popup.js";
 import { settings } from "../utils/constants.js";
 import Api from "./Api.js";
-
+import { api } from "../index.js";
 export default class PopupWithForm extends Popup {
   constructor(selectorPopup, handleFormSubmit) {
     super(selectorPopup);
     this.handleFormSubmit = handleFormSubmit;
-    this._apiCard = new Api();
+    this._apiCard = api; //new Api();
     this.popupElement = document.querySelector(selectorPopup);
     this.popupFormElement = this.popupElement.querySelector(
       settings.formSelector

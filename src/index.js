@@ -60,10 +60,11 @@ export const closeDisplayBtn = document.querySelector(
   ".imgdisplay__container-button"
 );
 let idprofile;
+export const api = new Api();
 
 const profileInfo = new UserInfo(profile);
 
-async function profileinit(prof) {
+async function profileInit(prof) {
   const userInfo = await prof.getUserInfo();
   profileName.textContent = userInfo.name;
   positionProf.textContent = userInfo.about;
@@ -84,9 +85,8 @@ function createCard(cardInfo) {
 
       if (evt.target.classList.value === "grid__card-delete") {
         const delCard = new PopupWithForm(".confirmation", () => {
-          let body;
-          const apiCard = new Api();
-          apiCard.deleteCard(body, cardInfo._id);
+          //const apiCard = new Api();
+          api.deleteCard({}, cardInfo._id);
           elemento.remove();
         });
         delCard.open(evt);
@@ -95,15 +95,13 @@ function createCard(cardInfo) {
     },
     idprofile,
     async (evt) => {
-      let body;
-      const apiLike = new Api();
-      const respLike = await apiLike.likeCard(body, cardInfo._id);
+      //const apiLike = new Api();
+      const respLike = await api.likeCard({}, cardInfo._id);
       evt.target.nextElementSibling.textContent = respLike.likes.length;
     },
     async (evt) => {
-      let body;
-      const apiUnlike = new Api();
-      const respUnlike = await apiUnlike.unlikeCard(body, cardInfo._id);
+      //const apiUnlike = new Api();
+      const respUnlike = await api.unlikeCard({}, cardInfo._id);
       evt.target.nextElementSibling.textContent = respUnlike.likes.length;
     }
   );
@@ -156,12 +154,12 @@ function updateImage(data) {
 }
 
 const editPopup = new PopupWithForm(".editimage", async (data) => {
-  const editApi = new Api();
+  //const editApi = new Api();
   let body = {
     avatar: data.link,
   };
 
-  const newImage = await editApi.updateImg(body);
+  await api.updateImg(body);
   profileHeader.src = data.link;
 });
 
@@ -170,7 +168,7 @@ editPopup.setEventListeners();
 formCard.enableValidation();
 formProfile.enableValidation();
 
-profileinit(profileInfo);
+profileInit(profileInfo);
 
 //abre ventana de perfil
 openProfileButton.addEventListener("click", async (evt) => {

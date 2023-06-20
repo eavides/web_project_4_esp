@@ -1,7 +1,8 @@
 import Api from "./Api.js";
+import { api } from "../index.js";
 export default class UserInfo {
   constructor(infoElement) {
-    this._api = new Api();
+    this._api = api; //new Api();
     this.infoElement = infoElement;
   }
 

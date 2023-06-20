@@ -52,6 +52,7 @@ class Card {
     this.count = this._element.querySelector(".grid__card-count");
     this.btnCardDel = this._element.querySelector(".grid__card-delete");
     this.btnCardLike = this._element.querySelector(".grid__card-like");
+    console.log(this.link);
     this.link.src = this._image;
     this.link.alt = this._title;
     this.title.textContent = this._title;
