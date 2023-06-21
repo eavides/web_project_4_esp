@@ -4,7 +4,6 @@ export default class Popup {
     this._popupElement = document.querySelector(this._selectorPopup);
   }
   open(data) {
-    //console.log(data);
     this._popupElement.classList.add("popup_opened");
     this._popupElement.classList.add("newcard_opened");
     this._popupElement.classList.add("confirmation_opened");

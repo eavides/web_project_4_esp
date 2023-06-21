@@ -13,7 +13,6 @@ export default class Api {
       method,
       body: JSON.stringify(body),
     });
-    //console.log(data);
 
     if (data.ok) {
       return data.json();
@@ -21,59 +20,46 @@ export default class Api {
   }
 
   async getUserInfo() {
-    //let userInfo;
     try {
       return await this.fetcher(`${this._urlBase}/users/me`, "GET");
     } catch (err) {
       console.log(`se dio el sigueinte error: ${err}`);
     }
-    //return userInfo;
   }
 
   async getCards() {
-    //let cardsInfo;
     try {
       return await this.fetcher(`${this._urlBase}/cards`, "GET");
     } catch (err) {
       console.log(err);
     }
-    //return cardsInfo;
   }
 
   async editProfileInfo(data) {
-    //let profileInfo;
     try {
       return await this.fetcher(`${this._urlBase}/users/me`, "PATCH", data);
     } catch (err) {
       console.log(err);
     }
-
-    //return profileInfo;
   }
 
   async addCard(data) {
-    //let newCard;
     try {
       return await this.fetcher(`${this._urlBase}/cards`, "POST", data);
     } catch (err) {
       console.log(err);
     }
-    //return newCard;
   }
 
   async deleteCard(data, id) {
-    //let delCard;
     try {
       return await this.fetcher(`${this._urlBase}/cards/${id}`, "DELETE", data);
     } catch (err) {
       console.log(err);
     }
-
-    //return delCard;
   }
 
   async likeCard(body, id) {
-    //let likeCard;
     try {
       return await this.fetcher(
         `${this._urlBase}/cards/likes/${id}`,
@@ -83,11 +69,9 @@ export default class Api {
     } catch (err) {
       console.log(err);
     }
-    //return likeCard;
   }
 
   async unlikeCard(body, id) {
-    //let unlikeCard;
     try {
       return await this.fetcher(
         `${this._urlBase}/cards/likes/${id}`,
@@ -97,11 +81,9 @@ export default class Api {
     } catch (err) {
       console.log(err);
     }
-    //return unlikeCard;
   }
 
   async updateImg(data, link) {
-    //let newImage;
     try {
       return await this.fetcher(
         `${this._urlBase}/users/me/avatar`,
@@ -111,6 +93,5 @@ export default class Api {
     } catch (err) {
       console.log(err);
     }
-    //return newImage;
   }
 }
