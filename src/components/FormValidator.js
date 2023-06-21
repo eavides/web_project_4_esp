@@ -8,6 +8,7 @@ export class FormValidator {
     this.errorElement = this.formElement.querySelector(
       `.${inputElement.id}-error`
     );
+
     inputElement.classList.add(this.settings.inputErrorClass);
     this.errorElement.textContent = errorMessage;
     this.errorElement.classList.add(this.settings.errorClass);
@@ -46,7 +47,6 @@ export class FormValidator {
     this.inputList = Array.from(
       this.formElement.querySelectorAll(this.settings.inputSelector)
     );
-
     this.buttonElement = this.formElement.querySelector(
       this.settings.submitButtonSelector
     );

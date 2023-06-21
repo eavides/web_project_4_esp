@@ -26,12 +26,11 @@ export default class Popup {
   }
 
   _handleEscClose(evt) {
-    //console.log(evt.target.classList.value);
     if (
       evt.target.classList.value ==
-        "popup popup_opened newcard_opened confirmation_opened" ||
+        "popup popup_opened newcard_opened confirmation_opened editimage_opened" ||
       evt.target.classList.value ==
-        "newcard popup_opened newcard_opened confirmation_opened" ||
+        "newcard popup_opened newcard_opened confirmation_opened editimage_opened" ||
       evt.target.classList.value == "imgdisplay__container" ||
       evt.target.classList.value ==
         "confirmation popup_opened newcard_opened confirmation_opened" ||

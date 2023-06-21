@@ -133,8 +133,10 @@ function createNewCard(data) {
 const formElement = Array.from(
   document.querySelectorAll(settings.formSelector)
 );
+
 const formCard = new FormValidator(settings, formElement[1]);
 const formProfile = new FormValidator(settings, formElement[0]);
+const formEdit = new FormValidator(settings, formElement[3]);
 
 const profilePopup = new PopupWithForm(".popup", (data) => {
   profileInfo.setUserInfo(data);
@@ -154,7 +156,6 @@ function updateImage(data) {
 }
 
 const editPopup = new PopupWithForm(".editimage", async (data) => {
-  //const editApi = new Api();
   let body = {
     avatar: data.link,
   };
@@ -167,13 +168,14 @@ editPopup.setEventListeners();
 
 formCard.enableValidation();
 formProfile.enableValidation();
+formEdit.enableValidation();
 
 profileInit(profileInfo);
 
 //abre ventana de perfil
 openProfileButton.addEventListener("click", async (evt) => {
   evt.preventDefault;
-
+  formProfile.enableValidation();
   const dataInfo = await profileInfo.getUserInfo();
   profilePopup.open(dataInfo);
 });
@@ -181,11 +183,13 @@ openProfileButton.addEventListener("click", async (evt) => {
 //abre ventana de Nueva tarjeta
 createCardButton.addEventListener("click", (evt) => {
   evt.preventDefault;
+  formCard.enableValidation();
   newCardPopup.open();
 });
 
 //abre ventana de editar imagen de perfil
 editImgButton.addEventListener("click", (evt) => {
   evt.preventDefault;
+  formEdit.enableValidation();
   editPopup.open();
 });

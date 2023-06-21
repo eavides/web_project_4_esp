@@ -6,7 +6,7 @@ export default class PopupWithForm extends Popup {
   constructor(selectorPopup, handleFormSubmit) {
     super(selectorPopup);
     this.handleFormSubmit = handleFormSubmit;
-    this._apiCard = api; //new Api();
+    this._apiCard = api;
     this.popupElement = document.querySelector(selectorPopup);
     this.popupFormElement = this.popupElement.querySelector(
       settings.formSelector
@@ -28,6 +28,7 @@ export default class PopupWithForm extends Popup {
   setEventListeners() {
     super.setEventListeners();
     this.popupFormElement.addEventListener("submit", (evt) => {
+      const inicial = evt.target.querySelector(".form__submit").textContent;
       evt.target.querySelector(".form__submit").textContent = "Guardando...";
       evt.preventDefault();
       const formData = this._getInputValues();
@@ -42,6 +43,7 @@ export default class PopupWithForm extends Popup {
         this.handleFormSubmit(formData);
       }
       this.close();
+      evt.target.querySelector(".form__submit").textContent = inicial;
     });
   }
 
